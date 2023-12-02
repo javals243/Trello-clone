@@ -4,11 +4,7 @@ import React from "react";
 const organizationIdPage = () => {
   const { userId, orgId } = auth();
 
-  return (
-    <div>
-      <OrganizationSwitcher hidePersonal />
-    </div>
-  );
+  return <div>Organization Page</div>;
 };
 
 export default organizationIdPage;
