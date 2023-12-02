@@ -2,7 +2,7 @@ import { Plus } from "lucide-react";
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { OrganizationSwitcher } from "@clerk/nextjs";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
 const NavBar = () => {
   return (
@@ -13,12 +13,17 @@ const NavBar = () => {
           <Logo />
         </div>
         <Button
+          variant="primary"
           size="sm"
           className="rounded-sm hidden md:block h-auto py-1.5 px-2"
         >
           Create
         </Button>
-        <Button size="sm" className="rounded-sm block md:hidden">
+        <Button
+          variant="primary"
+          size="sm"
+          className="rounded-sm block md:hidden"
+        >
           <Plus className="h-4 w-4" />
         </Button>
       </div>
@@ -34,6 +39,17 @@ const NavBar = () => {
                 justifyContent: "center",
                 display: "flex",
                 alignItems: "center",
+              },
+            },
+          }}
+        />
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              avatarBox: {
+                height: 30,
+                width: 30,
               },
             },
           }}
